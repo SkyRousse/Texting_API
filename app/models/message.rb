@@ -4,7 +4,7 @@ class Message < ActiveRecord::Base
 private
   def send_message
     begin
-JSON.parse(to).each do |recipient|
+      JSON.parse(to).each do |recipient|
         response = RestClient::Request.new(
           :method => :post,
           :url => "https://api.twilio.com/2010-04-01/Accounts/#{ENV['TWILIO_ACCOUNT_SID']}/Messages.json",

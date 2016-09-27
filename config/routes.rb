@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root :to => 'application#index'
   resources :messages, :only => [:index, :new, :create, :show]
   resources :contacts
+  resources :inbound_messages
 end
